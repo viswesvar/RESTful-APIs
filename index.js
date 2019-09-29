@@ -19,6 +19,10 @@ app.get('/api/education', (req, res) => {
     res.send(education);
 });
 
+app.get('/api/dob', (req, res) => {
+    res.send('Birth date: 11th september 1993');
+});
+
 app.get('/api/education/:id', (req, res) => {
     const edu = education.find(c => c.id === parseInt(req.params.id));
     if (!edu) res.status(404).send(`The education of the given ID is not found`);
